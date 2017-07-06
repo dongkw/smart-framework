@@ -36,7 +36,7 @@ public final class ConfigHelper {
      * 获取jdbc 密码
      */
     public static String getJdbcPassword() {
-        return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.JDBC_PASSWODR);
+        return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.JDBC_PASSWORD);
     }
 
     /**
