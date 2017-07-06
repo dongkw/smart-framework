@@ -32,4 +32,15 @@ public final class StringUtil {
     public static boolean isNotEmpty(String str) {
         return !StringUtils.isEmpty(str);
     }
+
+        /**
+         * 字符串转换数组
+         * @param str
+         * @param splitStr
+         * @return
+         */
+    public static String[] splitString(String str,String splitStr){
+        return str.split(splitStr);
+    }
+
 }

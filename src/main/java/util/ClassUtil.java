@@ -28,6 +28,9 @@ public class ClassUtil {
     public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
     }
+    public static Class<?> loadClass(final String className) {
+        return loadClass(className,false);
+    }
 
     /**
      * 加载类

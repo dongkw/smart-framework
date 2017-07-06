@@ -4,7 +4,7 @@ package constant;
  * Created by dkw on 2017/6/30.
  */
 public interface ConfigConstant {
-    String CONFIG_FILE="smart.propertoes";
+    String CONFIG_FILE="smart.properties";
 
     String JDBC_DRIVER="smart.framework.jdbc.driver";
     String JDBC_URL="smart.framework.jdbc.url";

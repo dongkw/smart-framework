@@ -7,7 +7,7 @@
     <groupId>org.smart4j</groupId>
     <artifactId>smart-framework</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name/>
     <description/>
     <properties>
@@ -100,5 +100,18 @@
             <version>4.10</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="smart-framework" />
         <module name="smartframework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="smart-framework" target="1.7" />
       <module name="smartframework" target="1.5" />
     </bytecodeTargetLevel>
   </component>
