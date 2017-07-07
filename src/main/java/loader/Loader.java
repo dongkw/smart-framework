@@ -13,7 +13,7 @@ import util.PropsUtil;
  */
 public class Loader {
     public static void init() {
-        new IocHelper();
+
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
@@ -21,7 +21,8 @@ public class Loader {
                 ControllerHelper.class
         };
         for (Class<?> cls : classList) {
-            ClassUtil.loadClass(cls.getName());
+            //在此处加载的类必须设置isInitialized属性值为true;
+            ClassUtil.loadClass(cls.getName(),true);
 
         }
 
