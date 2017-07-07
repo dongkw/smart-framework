@@ -7,7 +7,7 @@ import common.Handler;
 import helper.BeanHelper;
 import helper.ConfigHelper;
 import helper.ControllerHelper;
-import helper.Loader;
+import loader.Loader;
 import util.*;
 
 import javax.servlet.ServletConfig;
@@ -51,8 +51,8 @@ public class DispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //获取请求方法与请求路径
         String requestMethod = req.getMethod().toLowerCase();
-        String requestPath = req.getPathInfo();
-        String a4= req.getServletPath();
+        String a4 = req.getPathInfo();
+        String requestPath= req.getServletPath();
         String a2=req.getPathInfo();
         String a3= req.getContextPath();
         String a1=req.getRequestURI();

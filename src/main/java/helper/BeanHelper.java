@@ -29,7 +29,7 @@ public class BeanHelper {
      * @return
      */
     public static Map<Class<?>, Object> getBeanMap() {
-        return BeanHelper.BEAN_MAP;
+        return BEAN_MAP;
     }
 
     /**

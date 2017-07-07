@@ -1,5 +1,9 @@
-package helper;
+package loader;
 
+import helper.BeanHelper;
+import helper.ClassHelper;
+import helper.ControllerHelper;
+import helper.IocHelper;
 import util.ClassUtil;
 import util.PropsUtil;
 
@@ -9,6 +13,7 @@ import util.PropsUtil;
  */
 public class Loader {
     public static void init() {
+        new IocHelper();
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
