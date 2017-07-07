@@ -11,6 +11,7 @@ import java.util.Properties;
 public final class ConfigHelper {
     private static final Properties CONFIG_PROPS = PropsUtil.loadProps(ConfigConstant.CONFIG_FILE);
 
+
     /**
      * 获取jdbc驱动
      */
@@ -49,7 +50,7 @@ public final class ConfigHelper {
     /**
      * 获取JSP路径
      */
-    public static String getJdbcAppJspPath() {
+    public static String getAppJspPath() {
         return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.APP_JSP_PATH);
     }
 

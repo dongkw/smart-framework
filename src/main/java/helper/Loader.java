@@ -1,6 +1,7 @@
 package helper;
 
 import util.ClassUtil;
+import util.PropsUtil;
 
 /**
  * 加载相应的 Helper 类
@@ -16,6 +17,8 @@ public class Loader {
         };
         for (Class<?> cls : classList) {
             ClassUtil.loadClass(cls.getName());
+
         }
+
     }
 }

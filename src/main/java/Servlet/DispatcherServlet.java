@@ -39,7 +39,8 @@ public class DispatcherServlet extends HttpServlet {
         ServletContext servletContext = config.getServletContext();
         //注册处理jsp的servlet
         ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
-        jspServlet.addMapping(ConfigHelper.getJdbcAppJspPath() + "*");
+        String str=ConfigHelper.getAppJspPath() + "*";
+        jspServlet.addMapping(str);
         //注册处理默认资源的servlet
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
         defaultServlet.addMapping(ConfigHelper.getAppAssetPath() + "*");
@@ -51,6 +52,10 @@ public class DispatcherServlet extends HttpServlet {
         //获取请求方法与请求路径
         String requestMethod = req.getMethod().toLowerCase();
         String requestPath = req.getPathInfo();
+        String a4= req.getServletPath();
+        String a2=req.getPathInfo();
+        String a3= req.getContextPath();
+        String a1=req.getRequestURI();
         //获取Action处理器
         Handler handler = ControllerHelper.getHandler(requestMethod, requestPath);
         if (handler != null) {
@@ -96,7 +101,7 @@ public class DispatcherServlet extends HttpServlet {
                         for (Map.Entry<String, Object> entry : model.entrySet()) {
                             req.setAttribute(entry.getKey(), entry.getValue());
                         }
-                        req.getRequestDispatcher(ConfigHelper.getJdbcAppJspPath() + path).forward(req, resp);
+                        req.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(req, resp);
                     }
                 }
             } else if (result instanceof Data) {

@@ -39,13 +39,13 @@ public class ClassUtil {
         Class<?> cls;
         try {
             cls = Class.forName(className, isInitialized, getClassLoader());
+
         } catch (ClassNotFoundException e) {
             log.error("load class failure", e);
             throw new RuntimeException(e);
         }
         return cls;
     }
-
     /**
      * 获取指定包下所有类
      */
@@ -80,7 +80,7 @@ public class ClassUtil {
                     }
                 }
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return classSet;
@@ -110,8 +110,8 @@ public class ClassUtil {
                 doAddClass(classSet, className);
             } else {
                 String subPackagePath = fileName;
-                if (StringUtil.isNotEmpty(packageName)) {
-                    subPackagePath = packagePath + "." + subPackagePath;
+                if (StringUtil.isNotEmpty(packagePath)) {
+                    subPackagePath = packagePath + "/" + subPackagePath;
                 }
                 String subPackageName = fileName;
                 if (StringUtil.isNotEmpty(packageName)) {

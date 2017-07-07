@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Hashtable;
 import java.util.Properties;
 
 /**
@@ -21,6 +22,7 @@ public class PropsUtil {
     /**
      * 加载属性文件
      */
+
     public static Properties loadProps(String filName) {
         Properties props = null;
         InputStream is = null;
@@ -63,7 +65,7 @@ public class PropsUtil {
      */
     public static String getString(Properties props, String key, String defaultValue) {
         String value = defaultValue;
-        if (props.contains(key)) {
+        if (props.containsKey(key)) {
             value = props.getProperty(key);
         }
         return value;
