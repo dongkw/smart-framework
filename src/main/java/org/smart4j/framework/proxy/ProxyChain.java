@@ -1,4 +1,4 @@
-package org.smart4j.framework;
+package org.smart4j.framework.proxy;
 
 import net.sf.cglib.proxy.MethodProxy;
 
@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 用于执行链式代理操作
  * Created by dkw on 2017/7/7.
  */
 public class ProxyChain {
@@ -31,8 +32,8 @@ public class ProxyChain {
         return this.targetClass;
     }
 
-    public Object getTargetObject() {
-        return this.targetObject;
+    public Object[] getMethodParams() {
+        return methodParams;
     }
 
     public Method getTargetMethod() {

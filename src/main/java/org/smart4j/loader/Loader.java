@@ -1,9 +1,6 @@
 package org.smart4j.loader;
 
-import org.smart4j.helper.BeanHelper;
-import org.smart4j.helper.ClassHelper;
-import org.smart4j.helper.ControllerHelper;
-import org.smart4j.helper.IocHelper;
+import org.smart4j.helper.*;
 import org.smart4j.util.ClassUtil;
 
 /**
@@ -16,6 +13,7 @@ public class Loader {
         Class<?>[] classList = {
                 ClassHelper.class,
                 BeanHelper.class,
+                AopHelper.class,
                 IocHelper.class,
                 ControllerHelper.class
         };

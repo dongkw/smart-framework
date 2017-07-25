@@ -1,6 +1,7 @@
-package org.smart4j.framework;
+package org.smart4j.framework.proxy;
 
 /**
+ * 代理接口
  * Created by dkw on 2017/7/7.
  */
 public interface Proxy {
