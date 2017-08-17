@@ -39,7 +39,7 @@ public class DispatcherServlet extends HttpServlet {
         ServletContext servletContext = config.getServletContext();
         //注册处理jsp的servlet
         ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
-        String str=ConfigHelper.getAppJspPath() + "*";
+        String str = ConfigHelper.getAppJspPath() + "*";
         jspServlet.addMapping(str);
         //注册处理默认资源的servlet
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
@@ -52,10 +52,10 @@ public class DispatcherServlet extends HttpServlet {
         //获取请求方法与请求路径
         String requestMethod = req.getMethod().toLowerCase();
         String a4 = req.getPathInfo();
-        String requestPath= req.getServletPath();
-        String a2=req.getPathInfo();
-        String a3= req.getContextPath();
-        String a1=req.getRequestURI();
+        String requestPath = req.getServletPath();
+        String a2 = req.getPathInfo();
+        String a3 = req.getContextPath();
+        String a1 = req.getRequestURI();
         //获取Action处理器
         Handler handler = ControllerHelper.getHandler(requestMethod, requestPath);
         if (handler != null) {
@@ -84,10 +84,15 @@ public class DispatcherServlet extends HttpServlet {
                     }
                 }
             }
+            Object result = null;
             Param param = new Param(paramMap);
             //调用Action 方法
             Method actionMethod = handler.getActionMethod();
-            Object result = RefiectionUtil.invokeMethod(controllerBean, actionMethod, param);
+            if (param.isEmpty()) {
+                result = RefiectionUtil.invokeMethod(controllerBean, actionMethod);
+            } else {
+                result = RefiectionUtil.invokeMethod(controllerBean, actionMethod, param);
+            }
             //处理Action方法返回值
             if (result instanceof View) {
                 //返回jsp页面

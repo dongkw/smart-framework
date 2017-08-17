@@ -38,8 +38,9 @@ public class RefiectionUtil {
     public static Object invokeMethod(Object obj, Method method,Object... args){
         Object result;
         try {
-
-            
+            if(args==null){
+                args=new Object[1];
+            }
             method.setAccessible(true);
 
             result =method.invoke(obj,args);
