@@ -38,7 +38,10 @@ public class RefiectionUtil {
     public static Object invokeMethod(Object obj, Method method,Object... args){
         Object result;
         try {
+
+            
             method.setAccessible(true);
+
             result =method.invoke(obj,args);
         } catch (Exception e) {
             log.error("invoke method failure",e);

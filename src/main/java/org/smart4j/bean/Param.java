@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by dkw on 2017/7/3.
  */
 public class Param {
-private Map<String,Object> paramMap;
+private final Map<String,Object> paramMap;
 
     public Param(Map<String, Object> paramMap) {
         this.paramMap = paramMap;
@@ -23,13 +23,18 @@ private Map<String,Object> paramMap;
     public long getLong(String name){
         return CastUtil.castLong(paramMap.get(name));
     }
-
+    public int getInt(String name) {
+        return CastUtil.castInt(paramMap.get(name));
+    }
+    public String getString(String name){
+        return CastUtil.castString(paramMap.get(name));
+    }
     /**
      * 获取所有字段信息
      * @return
      */
 
     public Map<String, Object> getMap() {
-        return this.paramMap;
+        return paramMap;
     }
 }
